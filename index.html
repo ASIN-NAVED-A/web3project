@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asin Naved A | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .intro img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 15px;
+    }
+    section {
+      margin: 40px 0;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .project-links a {
+      display: block;
+      color: #007BFF;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .socials a {
+      display: inline-block;
+      margin: 10px;
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .intro img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Asin Naved A</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="intro" id="about">
+      <h2>About Me</h2>
+      <img src="WhatsApp Image 2025-07-07 at 23.09.41_16489843.jpg" alt="Asin Naved A" />
+      <p>Hi, I'm Asin Naved A. I'm passionate about web development, cybersecurity, and virtual reality. I work with Python, C, and JavaScript. I specialize in ethical hacking and tools like Nmap, and I've also contributed to virtual reality projects.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Coffee Shop Project</h3>
+        <p>A modern, stylish website for a coffee shop using HTML, CSS, and JavaScript.</p>
+        <img src="WhatsApp Image 2025-07-07 at 23.24.10_e4ab30c6.jpg" alt="Coffee Shop Project Preview ">
+        <div class="project-links">
+          <a href="https://lnkd.in/d4Sq5a3x" target="_blank">View Coffee Shop Project</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Trivandrum Tourism Project</h3>
+        <p>A visually appealing site highlighting tourist destinations in Trivandrum. Built with responsive design and interactivity.</p>
+        <img src="Munnar66_20181211014155.jpg" alt="Tourism Project Preview">
+        <div class="project-links">
+          <a href="https://lnkd.in/dJ9nuCyn" target="_blank">View Trivandrum Tourism Project</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Your Phone Number" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="socials">
+        <a href="mailto:asinaved16@gmail.com" title="Email">Email</a>
+        <a href="https://github.com/ASIN-NAVED-A" target="_blank" title="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/asin-naved-a-9070ba331" target="_blank" title="LinkedIn">LinkedIn</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Asin Naved A. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Navigation highlight (event handling)
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Fetch API example (basic form submission simulation)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const response = await fetch('https://example.com/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert('Message sent successfully!');
+          form.reset();
+        } else {
+          alert('There was a problem sending your message.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong.');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
